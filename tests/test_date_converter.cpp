@@ -9,11 +9,19 @@ int main()
     assert(result.year == 2024);
     assert(result.day_of_year == 1);
 
-    // TEST: Increa.se the year by 1.
+    // TEST: Increase the year by 1.
     DateResult result2 = convert_days_since_year(2025, 365);
 
     assert(result2.day_of_year == 1);
     assert(result2.year == 2026);
+
+    // TEST: Leap year non-skipping
+    DateResult result3 = convert_days_since_year(2024, 365);
+    
+    assert(result3.day_of_year == 366);
+    assert(result3.year == 2024);
+
+    // TEST: Leap year progressing year
 
     return 0;
 }

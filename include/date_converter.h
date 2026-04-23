@@ -12,6 +12,7 @@ typedef struct
 } DateResult;
 
 DateResult convert_days_since_year(int start_year, int days_since_start);
+int is_leap_year(int year);
 
 #ifdef __cplusplus
 }
