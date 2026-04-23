@@ -27,5 +27,17 @@ int main()
     assert(result4.day_of_year == 1);
     assert(result4.year == 2025);
 
+    // TEST: Non-leap year (divisible by 100)
+    DateResult result5 = convert_days_since_year(1900, 365);
+
+    assert(result5.day_of_year == 1);
+    assert(result5.year == 1901);
+
+    // TEST: Leap year (divisible by 400)
+    DateResult result6 = convert_days_since_year(2000, 365);
+
+    assert(result6.day_of_year == 366);
+    assert(result6.year == 2000);
+
     return 0;
 }
