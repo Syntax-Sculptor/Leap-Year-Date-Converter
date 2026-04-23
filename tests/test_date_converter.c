@@ -1,4 +1,4 @@
-#include <cassert>
+#include <assert.h>
 #include "date_converter.h"
 
 int main()
