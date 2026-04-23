@@ -22,6 +22,10 @@ int main()
     assert(result3.year == 2024);
 
     // TEST: Leap year progressing year
+    DateResult result4 = convert_days_since_year(2024, 366);
+
+    assert(result4.day_of_year == 1);
+    assert(result4.year == 2025);
 
     return 0;
 }

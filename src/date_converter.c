@@ -7,18 +7,16 @@ int is_leap_year(int year) {
 DateResult convert_days_since_year(int start_year, int days_since_start) {
     DateResult result;
     result.year = start_year;
-
+    result.day_of_year = 0;
+    
     while (days_since_start >= 365) { 
-        if (is_leap_year(result.year)) {
-            if (days_since_start <= 365) {
-                break;
-            }
-            days_since_start -= 366;
+        int days_in_year = is_leap_year(result.year) ? 366 : 365;
+
+        if (days_since_start < days_in_year) {
+            break;
         }
-        else {
-            days_since_start -= 365;
-        }
-        
+
+        days_since_start -= days_in_year;
         result.year++;
     }
  
